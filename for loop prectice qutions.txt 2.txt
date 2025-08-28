@@ -1,0 +1,249 @@
+For Loop &While Loop ( Questions)
+-------------------------------------------------------------------------------------------------
+ 1. Write a program to print all natural numbers from 1 to n.– using while
+ loop.
+n = int(input("Enter the value of n: "))
+i = 1
+while i <= n:
+    print(i)
+    i = i + 1
+------------------------------------------------------------------------------------------------
+
+ 2. Write a program to print all natural numbers in reverse (from n to 1).
+using while loop
+n = int(input("Enter the value of n: "))
+i = n
+while i >= 1:
+    print(i)
+    i = i - 1
+------------------------------------------------------------------------------------------------
+
+ 3. Write a program to print all alphabets from a to z.– using while loop
+ch = ord('a')  
+while ch <= ord('z'):
+    print(chr(ch), end=" ")  
+    ch = ch + 1
+------------------------------------------------------------------------------------------------
+
+ 4. Write a program to print all even numbers between 1 to 100.– using
+ while loop
+i = 2
+while i <= 100:
+    print(i, end=" ")
+    i = i + 2 
+------------------------------------------------------------------------------------------------
+
+ 5. Write a program to find the sum of all odd numbers between 1 to n.
+n = int(input("Enter the value of n: "))
+i = 1
+sum = 0
+while i <= n:
+    if i % 2 != 0:       
+        sum = sum + i   
+    i = i + 1
+print("Sum of all odd numbers from 1 to", n, "is:", sum)
+------------------------------------------------------------------------------------------------
+
+ 6. Write a program to count the number of digits in a number.
+num = int(input("Enter a number: "))
+count = 0
+if num == 0:
+    count = 1
+else:
+    while num != 0:
+        num = num // 10   
+        count = count + 1
+print("Total number of digits:", count)
+------------------------------------------------------------------------------------------------
+
+ 7. Write a program to calculate the sum of digits of a number.
+num = int(input("Enter a number: "))
+sum = 0
+while num != 0:
+    digit = num % 10     
+    sum = sum + digit    
+    num = num // 10      
+print("Sum of digits:", sum)
+------------------------------------------------------------------------------------------------
+
+ 8. Write a program to find the first and last digit of a number.
+num = int(input("Enter a number: "))
+last_digit = num % 10
+first_digit = num
+while first_digit >= 10:
+    first_digit = first_digit // 10
+print("First digit:", first_digit)
+print("Last digit:", last_digit)
+------------------------------------------------------------------------------------------------
+
+ 9. Write a program to find the sum of first and last digit of a number.
+
+------------------------------------------------------------------------------------------------
+ 10.Write a program to enter a number and print its reverse.
+num = int(input("Enter a number: "))
+reverse = 0
+original = num
+while num != 0:
+    digit = num % 10           
+    reverse = reverse * 10 + digit  
+    num = num // 10            
+print("Reverse of", original, "is:", reverse)
+------------------------------------------------------------------------------------------------
+ 11.Write a program to find the power of a number using for loop.
+base = int(input("Enter the base number: "))
+power= int(input("Enter the exponent (power): "))
+result = 1
+for i in range(power):
+    result = result * base
+print(base, "raised to the power", power, "is:", result)
+------------------------------------------------------------------------------------------------
+ 12.Write a program to find all factors of a number.
+num = int(input("Enter a number: "))
+
+print("Factors of", num, "are:")
+for i in range(1, num + 1):
+    if num % i == 0:
+        print(i, end=" ")
+------------------------------------------------------------------------------------------------
+ 13.Write a program to calculate the factorial of a number.
+num = int(input("Enter a number: "))
+if num < 0:
+    print("Factorial is not defined for negative numbers.")
+else:
+    factorial = 1
+    for i in range(1, num + 1):
+        factorial = factorial * i
+    print("Factorial of", num, "is:", factorial)
+------------------------------------------------------------------------------------------------
+ 14.Write a program to find LCM of two numbers.
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
+if num1 > num2:
+    greater = num1
+else:
+    greater = num2
+while True:
+    if greater % num1 == 0 and greater % num2 == 0:
+        lcm = greater
+        break
+    greater += 1
+print("LCM of", num1, "and", num2, "is:", lcm)
+------------------------------------------------------------------------------------------------
+ 15.Write a program to check whether a number is Prime number or not.
+num = int(input("Enter a number: "))
+if num <= 1:
+    print(num, "is not a prime number")
+else:
+    is_prime = True
+    for i in range(2, int(num**0.5) + 1):  
+        if num % i == 0:
+            is_prime = False
+            break
+
+    if is_prime:
+        print(num, "is a prime number")
+    else:
+        print(num, "is not a prime number")
+------------------------------------------------------------------------------------------------
+ 16.Write a program to print all Prime numbers between 1 to n.
+n = int(input("Enter the value of n: "))
+
+print("Prime numbers between 1 and", n, "are:")
+for num in range(2, n + 1):
+    is_prime = True
+    for i in range(2, int(num ** 0.5) + 1):  
+        if num % i == 0:
+            is_prime = False
+            break
+    if is_prime:
+        print(num, end=" ")
+------------------------------------------------------------------------------------------------
+ 17.Write a program to find all prime factors of a number.
+num = int(input("Enter a number: "))
+
+print("Prime factors of", num, "are:")
+i = 2
+while i <= num:
+    while num % i == 0:
+        print(i, end=" ")
+        num = num // i
+    i = i + 1
+------------------------------------------------------------------------------------------------
+ 18.Write a program to check whether a number is an Armstrong number or
+ not.
+ a. AnArmstrong number is a n-digit number that is equal to the sum
+ of the nth power of its digits. For example
+6 =61=6
+ 371 = 33+73+13=371.................
+num = int(input("Enter a number: "))
+original = num
+n = len(str(num))
+sum = 0
+temp = num
+while temp > 0:
+    digit = temp % 10
+    sum += digit ** n
+    temp = temp // 10
+if sum == original:
+    print(original, "is an Armstrong number.")
+else:
+    print(original, "is not an Armstrong number.")
+------------------------------------------------------------------------------------------------
+ 19.Write a program to check whether a number is Strong number or not
+ a. Strong number is a special number whose sum of factorial digits is
+ equal to the original number.
+ For example: 145 is a strong number. Since, 1! + 4! + 5! = 145
+def factorial(n):
+    fact = 1
+    for i in range(1, n+1):
+        fact = fact * i
+    return fact
+num = int(input("Enter a number: "))
+original = num
+sum = 0
+while num > 0:
+    digit = num % 10
+    sum += factorial(digit)
+    num = num // 10
+if sum == original:
+    print(original, "is a Strong number.")
+else:
+    print(original, "is not a Strong number.")
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 20.Write a program to check whether a number is perfect number or not
+a. Perfect number is a positive integer which is equal to the sum of
+ its proper positive divisors.
+ For example: 6 is the first perfect number
+ Proper divisors of 6 are 1, 2, 3
+ Sumofits proper divisors = 1 + 2 + 3 = 6.
+ Hence 6 is a perfect number.
+num = int(input("Enter a number: "))
+sum = 0
+for i in range(1, num):
+    if num % i == 0:
+        sum += i
+if sum == num:
+    print(num, "is a Perfect number.")
+else:
+    print(num, "is not a Perfect number.")
+------------------------------------------------------------------------------------------------
+ 21.Write a program to print fibonacci series upto n terms
+ a. Fibonacci series is a series of numbers where the current number
+ is the sum of the previous two terms. For Example: 0, 1, 1, 2, 3, 5,
+ 8, 13, 21, … , (n-1th + n-2th)
+n = int(input("Enter the number of terms: "))
+a = 0
+b = 1
+
+print("Fibonacci Series up to", n, "terms:")
+for i in range(n):
+    print(a, end=" ")
+    next_term = a + b
+    a = b
+    b = next_term
+------------------------------------------------------------------------------------------------
+ 22.Write a program to find ones complement of a binary number
+ a. One's complement of a binary number is defined as value
+ obtained by inverting all binary bits. It is the result of swapping all
+ 1s to 0s and all 0s to 1s.
+ b.
